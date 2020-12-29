@@ -8,14 +8,14 @@ if (!defined('CONST_INCLUDE')){
 $tampon = new VueGenerique();
 
             if (!isset($_GET['module'])) {
-                $module="acceuil";
-                $_GET['action'] = "test";
+                $module="Acceuil";
+                $_GET['action'] = "acceuil_non_co";
             }
             else {
                 $module=htmlspecialchars($_GET['module']);
             }
             switch($module){
-                case "acceuil":
+                case "Acceuil":
                 case "Profil":
                 case "Rencontre":
                 case "Administrateur":

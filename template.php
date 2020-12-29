@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 	<head>
@@ -17,7 +18,15 @@
         <header>
             <nav>
                 <a href="index.php"><img src="include/image/Meetok.png"/></a>
-                <a href="index.php?module=Connexion&action=connexion"><input type="button" value="Connexion"></a>
+                <?php
+                    if (!isset($_SESSION['id_Utilisateur'])){
+                        echo '<a href="index.php?module=Connexion&action=formulaire"><input type="button" value="Connexion"></a>';
+                        echo '<a href="index.php?module=Connexion&action=form_Inscription"><input type="button" value="Inscription"></a>';
+                    }
+                else {
+                    echo '<a href="index.php?module=Connexion&action=deconnexion"><input type="button" value="Deconnexion"></a>';
+                }
+                ?>
             </nav>
         </header>
         <div class="container">

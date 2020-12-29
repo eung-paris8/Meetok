@@ -14,7 +14,7 @@ class Connexion {
 		$login = "root";
 		$mdp = "root";
 		try {
-			self::$bdd = new PDO($dns,$login,$mdp,$option);
+			self::$bdd = new PDO($dns,$login,$mdp,$options);
 		} catch(PDOException $pdoe){
 			echo 'Erreur de Connexion a la BD';
 		}
