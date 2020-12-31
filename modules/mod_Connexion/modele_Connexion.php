@@ -35,7 +35,39 @@ class ModeleConnexion extends Connexion {
     }
     
     public function inscription(){
+        $req = self::$bdd->prepare("INSERT INTO utilisateur VALUES (default,?,?,?,?,?,?,?,?,?)");
         
+        $nom = $_POST['nom'];
+        $prenom = $_POST['prenom'];
+        
+        if (strcmp($_POST['mdp1'], $_POST['mdp2']) !=0){
+            die("Les mots de passe sont differents.");
+        }
+        else {
+            $mdp = hash('sha512', $_POST['mdp1']);
+        }
+        
+        if (!empty($_POST['avatar'])){
+            $avatar = $_POST['avatar'];
+        }
+        else {
+            $avatar = NULL;
+        }
+        $age = $_POST['age'];
+        $age = (int)$age;
+        $localisation = $_POST['localisation'];
+        $sexe = $_POST['sexe'];
+        $description = $_POST['description'];
+        if (isset($_POST['interet'])) {
+            $interet = $_POST['interet'];
+        }
+        else {
+            die("Veiullez choisir au moins un centre d'interet");
+        }
+        $login = $prenom[0].$nom;
+        
+        $res=$req->execute(array($nom,$prenom,$sexe,$description,$age,$localisation,$avatar,$mdp,$login));
+        return $res;
     }
     
     public function getInteret(){

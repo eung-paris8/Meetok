@@ -49,19 +49,19 @@ class VueConnexion extends VueGenerique {
                     <input type="file" id="avatar" name="avatar" accept="image/png"></br>
                     
                     <label>Age :</label></br>
-                    <input type="number" name="age"></br>
+                    <input type="number" name="age" required></br>
                     
                     <label>Localisation :</label></br>
-                    <input type="text" name="localisation"></br>
+                    <input type="text" name="localisation" required></br>
                     
                     <label>Sexe :</label></br>
-                    <input type="radio" name="sexe" value="Homme"/><label for="Homme">Homme</label>
-                    <input type="radio" name="sexe" value="Femme"/><label for="Femme">Femme</label></br>
+                    <input type="radio" name="sexe" value="H"/><label for="Homme">Homme</label>
+                    <input type="radio" name="sexe" value="F"/><label for="Femme">Femme</label></br>
                     
                     <label>Desciption :</label></br>
-                    <textarea></textarea></br>
+                    <textarea name="description" required></textarea></br>
                     
-                    <label>Centres d\'interets : (5 minimums)</label></br>';
+                    <label>Centres d\'interets : </label></br>';
         foreach ($arrayInteret as $key) {
             echo '<input type="radio" name="interet" value="'.$key['nom_Centres_d_Interets'].'"/><label for="'.$key['nom_Centres_d_Interets'].'">'.$key['nom_Centres_d_Interets'].'</label>';
         }
