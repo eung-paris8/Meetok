@@ -17,15 +17,32 @@ class ModeleConnexion extends Connexion {
         else{
             $bd = self::$bdd->prepare('SELECT * FROM Utilisateur where login like ? and mot_de_passe like ?');
             $bd->execute(array($_POST['login'], $mdp));
-            $response = $bd->fetch();
-            if ($response) {
-                $_SESSION['id_Utilisateur'] = $response['id_Utilisateur'];
-                $_SESSION['login'] = $response['login'];
-                header('Location:index.php');
+            $array = $bd->fetchAll();
+            if (count($array) == 0) {
+                $req = self::$bdd->prepare('SELECT * FROM administrateur where login_Admin like ? and mot_de_passe_Admin like ?');
+                $req->execute(array($_POST['login'], $mdp));
+                $response = $req->fetch();
+                if ($response) {
+                    $_SESSION['id_Utilisateur'] = $response['id_Administrateur'];
+                    $_SESSION['login'] = $response['login_Admin'];
+                    header('Location:index.php');
+                }
+                else {
+                    die("login ou mot de passe incorect");
+                }
             }
             else {
-                die("login ou mot de passe incorect");
+                $response = $bd->fetch();
+                if ($response) {
+                    $_SESSION['id_Utilisateur'] = $response['id_Utilisateur'];
+                    $_SESSION['login'] = $response['login'];
+                    header('Location:index.php');
+                }
+                else {
+                    die("login ou mot de passe incorect");
+                }
             }
+            
         }
     }
     
