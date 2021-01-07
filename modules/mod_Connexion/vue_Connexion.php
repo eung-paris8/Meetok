@@ -12,8 +12,9 @@ class VueConnexion extends VueGenerique {
     
     public function formulaire() {
         echo '
-        <center class="py-5">
-            <form action="index.php?module=Connexion&action=connexion" method="post" class="bg-secondary rounded w-50 py-5">
+        <div class="formulaireConnexion my-4">
+        <div class="containerFormConnexion ms-auto me-auto px-5 py-5">
+            <form action="index.php?module=Connexion&action=connexion" method="post" class="py-5">
                 <div>
                     <h1>Connexion</h1>
                     <label>Login :</label></br>
@@ -23,14 +24,16 @@ class VueConnexion extends VueGenerique {
                 </div>
                 <input class="button-center" type="submit" value="Connexion">
             </form>
-        </center>
+        </div>
+        </div>
         ';
     }
     
     public function form_Inscription($arrayInteret){
         echo '
-        <center class="py-5">
-            <form action="index.php?module=Connexion&action=inscription" method="post" class="bg-secondary rounded w-50 py-5">
+        <div class="formulaireInscription my-4">
+        <div class="containerFormInscription ms-auto me-auto px-5 py-5">
+            <form action="index.php?module=Connexion&action=inscription" method="post" class="rounded">
                 <div>
                     <h1>Inscription</h1>
                     <label>Nom :</label></br>
@@ -59,7 +62,7 @@ class VueConnexion extends VueGenerique {
                     <input type="radio" name="sexe" value="F"/><label for="Femme">Femme</label></br>
                     
                     <label>Desciption :</label></br>
-                    <textarea name="description" required></textarea></br>
+        .            <textarea name="description" required></textarea></br>
                     
                     <label>Centres d\'interets : </label></br>';
         foreach ($arrayInteret as $key) {
@@ -67,9 +70,10 @@ class VueConnexion extends VueGenerique {
         }
         echo'
                 </div>
-                <input class="button-center" type="submit" value="Connexion">
+                <input class="button-center" type="submit" value="Inscription">
             </form>
-        </center>
+        </div>
+        </div>
         ';
     }
 }

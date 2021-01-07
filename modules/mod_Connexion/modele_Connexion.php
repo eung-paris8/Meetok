@@ -67,13 +67,56 @@ class ModeleConnexion extends Connexion {
         $login = $prenom[0].$nom;
         
         $res=$req->execute(array($nom,$prenom,$sexe,$description,$age,$localisation,$avatar,$mdp,$login));
+        $res2=self::insertInteret($interet, $login);
+        $res3=self::insertList($login);
+        
+        
+        echo "Votre login est ".$login." .";
+        
         return $res;
+        
     }
     
     public function getInteret(){
         $req = self::$bdd->prepare('SELECT * FROM centres_d_interets');
         $req->execute();
         return $req->fetchAll();
+    }
+    
+    public function insertInteret($interet, $login){
+        $req1 = self::$bdd->prepare("SELECT * FROM utilisateur where login like ?");
+    	$res1 = $req1->execute(array($login));
+        foreach ($req1 as $key) {
+             $idU = $key['id_Utilisateur'];
+        }
+        
+        $req2=self::$bdd->prepare("SELECT * FROM centres_d_interets where nom_Centres_d_Interets like ?");
+        $res2=$req2->execute(array($interet));
+        foreach ($req2 as $key) {
+             $idCI = $key['id_Centres_d_Interets'];
+        }
+        
+        $insertCI=self::$bdd->prepare("INSERT INTO aime VALUES (?,?)");
+        $insertCI->execute(array($idU,$idCI));
+        
+        return $insertCI;
+    }
+    
+    public function insertList($login) {
+        $req1 = self::$bdd->prepare("SELECT * FROM utilisateur where login like ?");
+    	$res1 = $req1->execute(array($login));
+        foreach ($req1 as $key) {
+             $idU1 = $key['id_Utilisateur'];
+        }
+        
+        $req2 = self::$bdd->prepare("SELECT * FROM utilisateur where login not like ?");
+        $res2 = $req2->execute(array($login));
+        foreach ($req2 as $key) {
+            $idU2 = $key['id_Utilisateur'];
+            $insertL=self::$bdd->prepare("INSERT INTO liste VALUES (0,0,?,?)");
+            $insertL->execute(array($idU1,$idU2));
+        }
+        return $res2;
     }
 }
 ?>
