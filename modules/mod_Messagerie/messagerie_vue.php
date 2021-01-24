@@ -57,7 +57,7 @@ if (!defined('CONST_INCLUDE')){
                         
                     <div class="messageRecu">
                         <div class="profilMsgRecu">
-                            <img src="img/imgProfileFemme.png" class="image-fluid" alt="">
+                            <img src="/include/image/default.png" class="image-fluid" alt="">
                         </div>
                         <div class="message-chat">
                             <p  class="mb-0 mx-3"> <?php echo $messageEnvoyer[$i]['textMessage']; ?></p>
