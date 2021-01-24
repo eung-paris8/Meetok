@@ -51,7 +51,7 @@
                                 if (isset($_SESSION['id_Utilisateur'])){
                                     echo '<a href="index.php?module=Profil&user='.$_SESSION['id_Utilisateur'].'"><img src="include/image/default.png" class="ppdp" style="width:40px; border-radius:50%;"></a>';
                                     echo '<div class="boutonConnexion"><a href="index.php?module=Rencontre">Rencontre</a></div>';
-                                    echo '<div class="boutonConnexion"><a href="">Messagerie</a></div>';
+                                    echo '<div class="boutonConnexion"><a href="index.php?module=Messagerie&action=menu">Messagerie</a></div>';
                                     echo '<a href="index.php?module=Notification"> <img src="include/image/cloche.png" style="width : 20px"></a>';  
                                 }
                                else {

@@ -32,7 +32,7 @@ class NotifModele Extends connexion{
 			$result->execute(array($key['id_Utilisateur_1'], $_SESSION['id_Utilisateur']));
 			
 			$testlike=$result->fetch();
-			if ($testlike) {
+			if ($testlike['matche']==1 && $testlike['passe']==0) {
 				array_push($matches, $testlike['prenom_Utilisateur']);
 			}
 		}
