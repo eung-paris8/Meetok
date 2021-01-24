@@ -7,23 +7,26 @@ include_once('./VueGenerique.php');
 class VueConnexion extends VueGenerique {
     public function __construct(){
         parent::__construct();
-        echo '<link rel="stylesheet" href="module/mod_Connexion/connexion.css">';
     }
     
     public function formulaire() {
         echo '
-        <div class="formulaireConnexion my-4">
+        <div class="formulaires px-5 py-4">
+        <div class="formulaireConnexion ms-auto my-4">
         <div class="containerFormConnexion ms-auto me-auto px-5 py-5">
-            <form action="index.php?module=Connexion&action=connexion" method="post" class="py-5">
-                <div>
+            <form action="index.php?module=Connexion&action=connexion" method="post">
+                <div class="containerFormConnexion py-5">
                     <h1>Connexion</h1>
                     <label>Login :</label></br>
-                    <input type="text" name="login" required></br>
+                    <input type="text" name="login" id="idClient" required></br>
                     <label>Mot de passe :</label></br>
-                    <input type="password" name="mdp" required></br>
+                    <input type="password" name="mdp" id="mdpConnexionClient" required></br>
                 </div>
-                <input class="button-center" type="submit" value="Connexion">
+                <div class="text-center">
+                    <input class="boutonConnexion" type="submit" value="Connexion">
+                </div>
             </form>
+        </div>
         </div>
         </div>
         ';
@@ -31,6 +34,7 @@ class VueConnexion extends VueGenerique {
     
     public function form_Inscription($arrayInteret){
         echo '
+        <div class="formulaires px-5 py-4">
         <div class="formulaireInscription my-4">
         <div class="containerFormInscription ms-auto me-auto px-5 py-5">
             <form action="index.php?module=Connexion&action=inscription" method="post" class="rounded">
@@ -62,7 +66,7 @@ class VueConnexion extends VueGenerique {
                     <input type="radio" name="sexe" value="F"/><label for="Femme">Femme</label></br>
                     
                     <label>Desciption :</label></br>
-        .            <textarea name="description" required></textarea></br>
+                    <textarea name="description" rows="10" required></textarea></br>
                     
                     <label>Centres d\'interets : </label></br>';
         foreach ($arrayInteret as $key) {
@@ -70,8 +74,11 @@ class VueConnexion extends VueGenerique {
         }
         echo'
                 </div>
+                <div class="text-center">
                 <input class="button-center" type="submit" value="Inscription">
+                </div>
             </form>
+        </div>
         </div>
         </div>
         ';

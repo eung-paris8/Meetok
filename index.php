@@ -9,7 +9,7 @@ $tampon = new VueGenerique();
 
             if (!isset($_GET['module'])) {
                 $module="Acceuil";
-                $_GET['action'] = "acceuil_non_co";
+                $_GET['action'] = "acceuil";
             }
             else {
                 $module=htmlspecialchars($_GET['module']);
@@ -20,6 +20,7 @@ $tampon = new VueGenerique();
                 case "Rencontre":
                 case "Administrateur":
                 case "Connexion":
+                case "Notification":
                     include 'modules/mod_'.$module.'/mod_'.$module.'.php';
                     break;
                 default :
