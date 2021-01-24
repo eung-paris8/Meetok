@@ -65,7 +65,7 @@
 				$result->execute(array(htmlspecialchars($_POST['localisation']), $this->idUser));
 			}
 
-			elseif ($_POST['localisation']=="" && $_POST['description']=="") {
+			else /*($_POST['localisation']=="" && $_POST['description']=="")*/ {
 				# code...
 			}
 			

@@ -4,7 +4,7 @@
     }
 
 
-	class ProfilVue{
+	class ProfilVue {
 
 		private $info;
         private $ci;
@@ -30,10 +30,10 @@
 			<head>
 				<title>Profil</title>
 
-				<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-				<link rel="stylesheet" type="text/css" href="style.css">
+				
+                
 
-				<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
 				<script type="text/javascript">
 			
@@ -62,7 +62,7 @@
 
 
 <!-- Section principale -->
-
+<body>
 <div class="container_fluid sectionPrincipale">
     <div class="container-xxl">
         <div class="containerProfil mx-auto">
