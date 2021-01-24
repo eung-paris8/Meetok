@@ -21,6 +21,14 @@
 			$this->idUser = $user;
 		}*/
 
+		/*function verifAcces(){
+			$sql="Select * from liste where id_Utilisateur = ? and id_Utilisateur_1=?;";
+			$result=self::$bdd->prepare($sql);
+			$result->execute(array($this->idUser,));
+			$data=$result->fetch();
+
+		}*/
+
 		function getInfo(){
 			//$sql="SELECT * From utilisateur where id_Utilisateur=(?)";
 			$sql="SELECT id_Utilisateur ,nom_Utilisateur ,prenom_Utilisateur, age ,localisation ,sexe ,nom_Centres_d_Interets, description, photo FROM utilisateur NATURAL JOIN aime NATURAL JOIN centres_d_interets WHERE id_Utilisateur=(?);";
