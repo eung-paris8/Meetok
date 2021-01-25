@@ -1,0 +1,46 @@
+/* Page de membres */
+.sectionMembre {
+  background-color: white;
+}
+
+.sectionMembre .sectionGauche {
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.sectionMembre .sectionDroite {
+  border: 2px solid black;
+  border-radius: 20px;
+}
+
+.sectionMembre .sectionEspaceMembre {
+  border: 2px solid black;
+  height: 700px;
+}
+
+.sectionMembre h3, .sectionMembre .h3 {
+  border-bottom: 2px solid black;
+  margin-bottom: 0;
+}
+
+.sectionMembre .affichageMembres {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 93%;
+}
+
+.sectionMembre .affichageMembres .membre {
+  border-bottom: 1px solid black;
+}
+
+.sectionMembre .sectionMembreSignale {
+  border: 2px solid black;
+  height: 700px;
+}
+
+.sectionMembre .sectionDroite .sectionMotif form textarea {
+  width: 100%;
+  height: 300px;
+  border: 2px solid black;
+  padding: 15px;
+}

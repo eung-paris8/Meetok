@@ -1,0 +1,40 @@
+.containerRencontre {
+  background-color: white;
+  min-height: 84.5vh;
+}
+
+.rencontreBox {
+  max-width: 1600px;
+  min-height: 75vh;
+}
+
+.photoProfil .containerImg {
+  width: 400px;
+  height: 500px;
+  border: 2px solid black;
+  border-radius: 30px;
+}
+
+.photoProfil .containerImg .imgProfil img {
+  width: 200px;
+  border-radius: 50%;
+  border: 2px solid black;
+}
+
+.nomPrenomPorfil h2, .nomPrenomPorfil .h2 {
+  display: inline-block;
+  margin-top: 20px;
+}
+
+.fleches {
+  margin-top: auto;
+}
+
+.flechePasse img {
+  max-width: 220px;
+  float: right;
+}
+
+.flecheMatch img {
+  max-width: 220px;
+}
