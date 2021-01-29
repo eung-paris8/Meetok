@@ -79,9 +79,6 @@
 			$sql="INSERT into creer_signalement values((?), null)";
 			$result=self::$bdd->prepare($sql);
 			$result->execute(array($this->idUser));
-			$sql="UPDATE liste set matche=0, passe=1 where id_Utilisateur=?";
-			$result=self::$bdd->prepare($sql);
-			$result->execute(array($_SESSION['id_Utilisateur']));
 
 		}
 	}

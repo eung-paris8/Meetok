@@ -18,7 +18,6 @@ $tampon = new VueGenerique();
                 case "Acceuil":
                 case "Profil":
                 case "Rencontre":
-                case "Messagerie":
                 case "Administrateur":
                 case "Connexion":
                 case "Notification":
